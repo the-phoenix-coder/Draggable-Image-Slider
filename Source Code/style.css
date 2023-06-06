@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.container {
+    position: relative;
+    display: flex;
+    max-width: 1200px;
+}
+i {
+    top: 50%;
+    height: 44px;
+    width: 44px;
+    color: #343F4F;
+    cursor: pointer;
+    font-size: 1.15rem;
+    position: absolute;
+    text-align: center;
+    background: #fff;
+    transition: transform 0.1s linear;
+    -webkit-transition: transform 0.1s linear;
+    -moz-transition: transform 0.1s linear;
+    -ms-transition: transform 0.1s linear;
+    -o-transition: transform 0.1s linear;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+i.active {
+    background-color: #f2f2f2;
+}
+#right {
+    right: 22px;
+    line-height: 44px;
+}
+#left {
+    left: 22px;
+    line-height: 44px;
+    display: none;
+}
+.carousel {
+    overflow-x: hidden;
+    cursor: pointer;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+}
+.carousel.dragging {
+    cursor: grab;
+    scroll-behavior: auto;
+}
+.carousel.dragging img {
+    pointer-events: none;
+}
+img {
+    height: 340px;
+    object-fit: cover;
+    user-select: none;
+    margin-left: 14px;
+    width: calc(100% / 3);
+}
+.carousel img:first-child {
+    margin-left: 0px
+}
+@media (max-width: 900px) {
+    .carousel img {
+        width: calc(100% / 2);
+    }
+}
+@media (max-width: 550px) {
+    .carousel img {
+        width: 100%;
+    }
+}
